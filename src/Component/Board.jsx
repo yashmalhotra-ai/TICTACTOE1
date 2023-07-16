@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Square from "./Square";
-import scribble from "./Scribble"
 
 const Board = () => {
   const [state, setState] = useState(Array(9).fill(null));
@@ -37,7 +36,6 @@ const Board = () => {
     if (state[index] !== null) {
       return;
     }
-    new Audio(scribble).play();
     const copyState = [...state];
     copyState[index] = isXTurn ? "X" : "O";
     setState(copyState);
